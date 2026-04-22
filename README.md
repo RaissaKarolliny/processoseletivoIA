@@ -56,13 +56,10 @@ Dessa forma, a Dynamic Range Quantization foi escolhida como solução final, po
 
 Foram testadas duas configurações de treinamento:
 
-Configuração A: 3 épocas, batch size = 16
-Configuração B: 5 épocas, batch size = 128
-
-Resultados (teste):
-
-A: acurácia ≈ 0,9886 | perda ≈ 0,0344
-B: acurácia ≈ 0,9858 | perda ≈ 0,0425
+| Configuração | Acurácia | Perda (Loss) |
+|--------------|---------|-------------|
+| A (3 épocas, batch 16)  | 0.9886  | 0.0344 |
+| B (5 épocas, batch 128) | 0.9858  | 0.0425 |
 
 A Configuração A apresentou melhor desempenho em todas as métricas (acurácia, precisão, recall e F1), além de menor perda. 
 
