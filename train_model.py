@@ -4,7 +4,6 @@ from tensorflow.keras import layers
 import numpy as np
 
 #carregando os dados
-
 mnist = keras.datasets.mnist 
 (x_train, y_train), (x_test, y_test) = mnist.load_data()
 
@@ -14,7 +13,6 @@ x_train = x_train.reshape(-1, 28, 28, 1).astype("float32") / 255.0
 x_test = x_test.reshape(-1, 28, 28, 1).astype("float32") / 255.0
 
 #Criando o modelo
-#modelo focado em Edge AI, deixei bem levinho e com poucas camadas
 model = keras.Sequential([
     keras.Input(shape=(28, 28, 1)),
     layers.Conv2D(16, (3,3), activation='relu'),
@@ -72,5 +70,5 @@ print(f"Perda:                 {loss:.4f}")
 print("="*30)
 
 #salvando
-# Guardando o modelo no formato h5 pra usar depois na otimização
+#Guardando o modelo no formato h5 pra usar depois na otimização
 model.save('model.h5')

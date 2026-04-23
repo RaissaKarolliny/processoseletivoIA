@@ -52,22 +52,19 @@ Dessa forma, a Dynamic Range Quantization foi escolhida como solução final, po
 
 ### 5️⃣ Comentários Adicionais
 
-- **Decisões técnicas importantes:** Escolha de Hiperparâmetros (Treinamento)
+ **Decisões técnicas importantes:** Escolha de Hiperparâmetros (Treinamento)
 
 Foram testadas duas configurações de treinamento:
 
 | Configuração | Acurácia | Perda (Loss) |
 |--------------|---------|-------------|
-| A (3 épocas, batch 16)  | 0.9886  | 0.0344 |
-| B (5 épocas, batch 128) | 0.9858  | 0.0425 |
+| A (3 épocas, batch 16)  | ~ 0.988  | ~ 0.034 |
+| B (5 épocas, batch 128) | ~ 0.9858  | ~ 0.0425 |
 
 A Configuração A apresentou melhor desempenho em todas as métricas (acurácia, precisão, recall e F1), além de menor perda. 
 
 Do ponto de vista de Edge AI, a Configuração A foi escolhida porque:
 
-Menor custo computacional (menos épocas e batches menores → menor uso de memória/CPU);
-Treinamento mais rápido, compatível com ambientes restritos (CI/CPU);
-Maior robustez à quantização: modelos com melhor desempenho inicial tendem a sofrer menor degradação após conversão para TensorFlow Lite;
-Estabilidade: batches menores tendem a produzir atualizações mais estáveis em cenários com recursos limitados.
+Menor custo computacional (menos épocas e batches menores → menor uso de memória/CPU).
 
 Para mais informações entre em contato: raissateixeir4@gmail.com
